@@ -24,6 +24,7 @@ Your application should have, at a minimum, four views:
 * when editing, existing data should be populated in the form
 
 ## Post/Comment UI
-```
-Posts and comments, in all views where they are displayed, should display their current score and should have controls to increment or decrement the voteScore for the object. Posts should display the number of comments associated with the post.
-```
+* Posts and comments, in all views where they are displayed should display their current score
+* should have controls to increment or decrement the voteScore for the object.
+* Posts should display the number of comments associated with the post.
+
