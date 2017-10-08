@@ -85,7 +85,7 @@ class Create extends Component {
 
 const mapStateToProps = (state, props) => {
   return {
-    url: state.serviceUrl
+    url: state.create.serviceUrl
   }  
 }
  

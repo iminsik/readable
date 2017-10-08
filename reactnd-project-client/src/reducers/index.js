@@ -1,11 +1,20 @@
 // How to write reducers?
+import { combineReducers } from 'redux'
+
 const InitialState = {
   serviceUrl: 'http://localhost:5001'
 }
 
-const Reducer = (state=InitialState, action) => 
+const create = (state=InitialState, action) => 
 {
   return state;
 }
 
-export { Reducer }
+const general = (state=InitialState, action) => 
+{
+  return state;
+}
+export default combineReducers({
+  create,
+  general
+}) 
