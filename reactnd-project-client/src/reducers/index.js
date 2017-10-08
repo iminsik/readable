@@ -1,8 +1,11 @@
 // How to write reducers?
+const InitialState = {
+  serviceUrl: 'http://localhost:5001'
+}
 
-const Reducer = (state={}, action) => 
+const Reducer = (state=InitialState, action) => 
 {
-  return {};
+  return state;
 }
 
 export { Reducer }
