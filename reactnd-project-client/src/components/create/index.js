@@ -64,8 +64,11 @@ class Create extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{margin: '20px 50px'}}>
         <form>
+          <input className="form-control" type="input" name="author" placeholder="Author" ref={input => {this.author = input}}/>
+          <input className="form-control" type="input" name="title" placeholder="Title" ref={input => {this.title = input}}/>
+          <Button bsStyle="primary" type="submit" name="create" onClick={this.submit}>Submit</Button>
           <SplitButton ref={input => { this.splitbutton = input }} bsStyle="primary" title={this.state.selectedCategory} id="SplitButton">
             {
               this.state.categories.map((category, idx) => (
@@ -73,12 +76,8 @@ class Create extends Component {
               ))
             }  
           </SplitButton>
-
-          <input type="input" name="author" placeholder="Author" ref={input => {this.author = input}}/>
-          <input type="input" name="title" placeholder="Title" ref={input => {this.title = input}}/>
-          <Button bsStyle="primary" type="submit" name="create" onClick={this.submit}>Submit</Button>
           <br />
-          <textarea cols="60" rows="5" name="body" placeholder="Your Text" ref={input => {this.body = input}}/>
+          <textarea style={{width: '100%'}}rows="5" name="body" placeholder="Your Text" ref={input => {this.body = input}}/>
         </form>
       </div>
     )
