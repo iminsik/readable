@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import uuidv1 from 'uuid/v1';
+import { Button } from 'react-bootstrap';
 
 class Create extends Component {
   constructor() {
@@ -74,7 +75,7 @@ class Create extends Component {
         </select>
         <input type="input" name="author" placeholder="Author" ref={input => {this.author = input}}/>
         <input type="input" name="title" placeholder="Title" ref={input => {this.title = input}}/>
-        <input type="submit" name="create" onClick={this.submit}/>
+        <Button bsStyle="primary" type="submit" name="create" onClick={this.submit}>Submit</Button>
         <br />
         <textarea cols="60" rows="5" name="body" placeholder="Your Text" ref={input => {this.body = input}}/>
         </form>
