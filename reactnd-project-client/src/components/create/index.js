@@ -77,7 +77,7 @@ class Create extends Component {
             }  
           </SplitButton>
           <br />
-          <textarea style={{width: '100%'}}rows="5" name="body" placeholder="Your Text" ref={input => {this.body = input}}/>
+          <textarea className="form-control" style={{width: '100%'}}rows="5" name="body" placeholder="Your Text" ref={input => {this.body = input}}/>
         </form>
       </div>
     )
