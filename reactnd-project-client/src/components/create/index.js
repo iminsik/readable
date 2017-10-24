@@ -11,7 +11,8 @@ class Create extends Component {
 
   componentDidMount(){
     fetch(`${this.props.url}/categories`,
-      { headers: {
+      {
+        headers: {
           'Authorization': 'insikcho',
           'Content-Type': 'application/json' 
         }
