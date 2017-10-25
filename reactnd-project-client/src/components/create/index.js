@@ -65,7 +65,7 @@ class Create extends Component {
 
   render() {
     return (
-      <div style={{margin: '20px 50px'}}>
+      <div className="form-group form-group-lg" style={{margin: '20px 50px'}}>
         <h1>Add Post</h1>
         <div style={{ marginTop: "20px" }}>
            <Button
