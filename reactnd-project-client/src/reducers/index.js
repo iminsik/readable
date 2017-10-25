@@ -25,7 +25,6 @@ const navigation = (state=InitialPage, action) =>
     default:
       return state;
   } 
-  return state;
 }
 
 export default combineReducers({
