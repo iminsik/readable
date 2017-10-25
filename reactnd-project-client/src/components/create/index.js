@@ -65,22 +65,20 @@ class Create extends Component {
 
   render() {
     return (
-      <div className="form-group form-group-lg" style={{margin: '20px 50px'}}>
+      <div className="container form-group form-group-lg" style={{margin: '20px 50px'}}>
         <h1>Add Post</h1>
-        <div style={{ marginTop: "20px" }}>
-           <Button
-              bsStyle="primary"
-              type="submit"
-              name="backToDefault"
-              onClick={this.props.navToDefaultPage}>
-              Back to list 
-          </Button>
-        </div>
+        <Button
+           bsStyle="primary"
+           type="submit"
+           name="backToDefault"
+           onClick={this.props.navToDefaultPage}>
+           Back to list 
+        </Button>
         <form>
           <input className="form-control" type="input" name="author" placeholder="Author" ref={input => {this.author = input}}/>
           <input className="form-control" type="input" name="title" placeholder="Title" ref={input => {this.title = input}}/>
           <textarea className="form-control" style={{width: '100%'}}rows="5" name="body" placeholder="Your Text" ref={input => {this.body = input}}/>
-          <Button bsStyle="primary" type="submit" name="create" onClick={this.submit}>Submit</Button>
+          <Button bsStyle="primary" style={{marginRight: "3px"}} type="submit" name="create" onClick={this.submit}>Submit</Button> 
           <SplitButton ref={input => { this.splitbutton = input }} bsStyle="primary" title={this.state.selectedCategory} id="SplitButton">
             {
               this.state.categories.map((category, idx) => (

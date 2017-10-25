@@ -79,9 +79,16 @@ class DefaultView extends Component {
 
   render() {
     return (
-      <div className='container'>
+      <div className='container' style={{margin: '20px 50px'}}>
         <h1>List Posts</h1>
-        <div className='row'>
+         <Button
+            bsStyle="primary"
+            type="submit"
+            name="addPost"
+            onClick={this.props.navToCreatePage}>
+            Add Post
+        </Button>
+        <div className='row articleRow' style={{ marginTop: "20px" }}>
           <div className='col-md-6 well cell header' onClick={this.sortBy('title')}>Title</div>
           <div className='col-md-2 well cell header' onClick={this.sortBy('votescore')}>Vote</div>
           <div className='col-md-2 well cell header' onClick={this.sortBy('date')}>Date</div>
@@ -90,7 +97,7 @@ class DefaultView extends Component {
         <div>
         {
             this.state.posts.map((post, idx) => (
-              <div key={idx} className='row'>
+              <div key={idx} className='row articleRow'>
                 <div className='col-md-6 well cell'>{post.title}</div>
                 <div className='col-md-2 well cell'>{post.voteScore}</div>
                 <div className='col-md-2 well cell'>{post.date.getFullYear() + '/' + post.date.getMonth() + '/' + post.date.getDay()}</div>
@@ -98,15 +105,6 @@ class DefaultView extends Component {
               </div>
             )) 
         }  
-        </div>
-        <div style={{ marginTop: "20px" }}>
-           <Button
-              bsStyle="primary"
-              type="submit"
-              name="addPost"
-              onClick={this.props.navToCreatePage}>
-              Add Post
-          </Button>
         </div>
       </div>
     )
