@@ -27,3 +27,24 @@ input, textarea {
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
+.container {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.article{
+  display: flex;
+}
+
+.item {
+  flex: 1;
+  border: 1px solid green;
+}
+
+.cell {
+  margin-bottom: 0px;
+  border-radius: 0px;
+  font-size: 1.2em;
+  min-height: 14px;
+}

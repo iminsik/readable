@@ -59,13 +59,23 @@ class Create extends Component {
       return response.json()
     })
     .then(json => {
-      console.log(json)
+      this.props.navToDefaultPage()
     })
   }
 
   render() {
     return (
       <div style={{margin: '20px 50px'}}>
+        <h1>Add Post</h1>
+        <div style={{ marginTop: "20px" }}>
+           <Button
+              bsStyle="primary"
+              type="submit"
+              name="backToDefault"
+              onClick={this.props.navToDefaultPage}>
+              Back to list 
+          </Button>
+        </div>
         <form>
           <input className="form-control" type="input" name="author" placeholder="Author" ref={input => {this.author = input}}/>
           <input className="form-control" type="input" name="title" placeholder="Title" ref={input => {this.title = input}}/>
@@ -90,5 +100,13 @@ const mapStateToProps = (state, props) => {
     url: state.create.serviceUrl
   }  
 }
+
+const mapDispatchToProps = (dispatch, props) => {
+  return {
+    navToDefaultPage: () => {
+      dispatch({ type: 'nav', page: 'default' })
+    }
+  }
+}
  
-export default connect(mapStateToProps)(Create);
+export default connect(mapStateToProps, mapDispatchToProps)(Create);

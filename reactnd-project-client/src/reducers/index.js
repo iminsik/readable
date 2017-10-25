@@ -5,16 +5,30 @@ const InitialState = {
   serviceUrl: 'http://localhost:5001'
 }
 
+const InitialPage = {
+  page: 'default'
+}
+
 const create = (state=InitialState, action) => 
 {
   return state;
 }
 
-const general = (state=InitialState, action) => 
+const navigation = (state=InitialPage, action) => 
 {
+  switch(action.type) {
+    case 'nav':
+      return {
+        ...state,
+        page: action.page 
+      }; 
+    default:
+      return state;
+  } 
   return state;
 }
+
 export default combineReducers({
   create,
-  general
+  navigation
 }) 
