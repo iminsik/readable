@@ -9,19 +9,17 @@ class DefaultView extends Component {
     this.state = { posts : [], sort: { key: 'date', direction: 'Inc' }}
   }
 
-  sortFuncs = (prev, current) => {
-    return {
-      Inc: (prev, current) => {
-        return prev < current
-      },
-      Desc: (prev, current) => {
-        return prev > current
-      } 
+  sortFuncs = {
+    Inc: (prev, current) => {
+      return prev < current
+    },
+    Desc: (prev, current) => {
+      return prev > current
     }
   }
 
   sortBy = (key) => {
-    const sortFuncs = this.sortFuncs();
+    const sortFuncs = this.sortFuncs;
     return () => {
       let direction = (this.state.sort.direction === 'Inc') ? 'Desc' : 'Inc'
       let posts = this.state.posts.sort((prev, current) => {
@@ -73,7 +71,7 @@ class DefaultView extends Component {
           }
         ));
         const { key, direction } = this.state.sort
-        posts = posts.sort((prev, current) => this.sortFuncs()[direction](prev[key], current[key]))
+        posts = posts.sort((prev, current) => this.sortFuncs[direction](prev[key], current[key]))
 
         this.setState({ posts });
     })
