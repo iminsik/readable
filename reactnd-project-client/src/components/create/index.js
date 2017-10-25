@@ -79,6 +79,7 @@ class Create extends Component {
         <form>
           <input className="form-control" type="input" name="author" placeholder="Author" ref={input => {this.author = input}}/>
           <input className="form-control" type="input" name="title" placeholder="Title" ref={input => {this.title = input}}/>
+          <textarea className="form-control" style={{width: '100%'}}rows="5" name="body" placeholder="Your Text" ref={input => {this.body = input}}/>
           <Button bsStyle="primary" type="submit" name="create" onClick={this.submit}>Submit</Button>
           <SplitButton ref={input => { this.splitbutton = input }} bsStyle="primary" title={this.state.selectedCategory} id="SplitButton">
             {
@@ -87,8 +88,6 @@ class Create extends Component {
               ))
             }  
           </SplitButton>
-          <br />
-          <textarea className="form-control" style={{width: '100%'}}rows="5" name="body" placeholder="Your Text" ref={input => {this.body = input}}/>
         </form>
       </div>
     )
