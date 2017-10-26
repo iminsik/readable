@@ -88,7 +88,7 @@ class DefaultView extends Component {
             onClick={this.props.navToCreatePage}>
             Add Post
         </Button>
-        <div className='row articleRow' style={{ marginTop: "20px" }}>
+        <div className='row articleRow' style={{ marginTop: "5px" }}>
           <div className='col-md-6 well cell header' onClick={this.sortBy('title')}>Title</div>
           <div className='col-md-2 well cell header' onClick={this.sortBy('votescore')}>Vote</div>
           <div className='col-md-2 well cell header' onClick={this.sortBy('date')}>Date</div>
